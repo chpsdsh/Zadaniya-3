@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <math.h>
+
+long long int f(int n){
+    if (n<1)
+        return 1;
+    else
+        return n*f(n-1);
+}
+
+int main() {
+    int n,x,s=0;
+    scanf_s("%d %d",&x,&n);
+    for (int i=0;i<n;i++){
+        if(i%2==0)
+            s+=pow(x,i)/f(i);
+        else
+            s-=pow(x,i)/f(i);
+    }
+    printf("%d",s);
+    return 0;
+}
