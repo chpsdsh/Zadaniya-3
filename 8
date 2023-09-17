@@ -4,48 +4,73 @@
 int main() {
     int s=0;
     for(int q=0;q<4;q++) {
-        s=0;
+
         for (int w = 0; w < 4; w++) {
             for (int e = 0; e < 4; e++) {
                 for (int r = 0; r < 4; r++) {
-                    if (q == 0)
-                        s += 1 + 2;
-                    else if (q == 1)
-                        s += 1 - 2;
-                    else if (q == 2)
-                        s += 1 * 2;
-                    else if (q == 3)
-                        s += 1 / 2;
+                    s=1;
+                    switch (q){
+                        case 0:
+                            s +=  2;
+                            break;
+                        case 1:
+                            s -= 2;
+                            break;
+                        case 2:
+                            s *=  2;
+                            break;
+                        case 3:
+                            s /= 2;
+                            break;
+                    }
 
-                    if (w == 0)
-                        s = s + 3;
-                    else if (w == 1)
-                        s = s - 3;
-                    else if (w == 2)
-                        s = s * 3;
-                    else if (w == 3)
-                        s = s / 3;
+                    switch (w){
+                        case 0:
+                            s +=  3;
+                            break;
+                        case 1:
+                            s -= 3;
+                            break;
+                        case 2:
+                            s *=  3;
+                            break;
+                        case 3:
+                            s /= 3;
+                            break;
+                    }
 
-                    if (e == 0)
-                        s = s + 4;
-                    else if (e == 1)
-                        s =s-4;
-                    else if (e == 2)
-                        s =s * 4;
-                    else if (e == 3)
-                        s =s / 4;
+                    switch (e){
+                        case 0:
+                            s +=  4;
+                            break;
+                        case 1:
+                            s -= 4;
+                            break;
+                        case 2:
+                            s *=  4;
+                            break;
+                        case 3:
+                            s /= 4;
+                            break;
+                    }
 
-                    if (r == 0)
-                        s = s + 5;
-                    else if (r == 1)
-                        s = s - 5;
-                    else if (r == 2)
-                        s = s * 5;
-                    else if (r == 3)
-                        s = s / 5;
-                    printf("%d %d %d %d %d\n",q,w,e,r,s);
+                    switch (r){
+                        case 0:
+                            s +=  5;
+                            break;
+                        case 1:
+                            s -= 5;
+                            break;
+                        case 2:
+                            s *= 5;
+                            break;
+                        case 3:
+                            s /= 5;
+                            break;
+                    }
+                    
                     if (s==35){
-                        printf("%d %d %d %d",q,w,e,r);
+                        printf("%d %d %d %d %d",q,w,e,r,s);
                         return 0;
                     }
                 }
