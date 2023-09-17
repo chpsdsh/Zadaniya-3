@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <math.h>
+
+float f(float x){
+    return pow(x,4) + 2 * pow(x,3) - x - 1;
+}
+float solve(float a, float b, float tochn){
+    float seredina;
+    while(b - a > tochn){
+        seredina=(a+b)/2;
+        if (f(a) * f(seredina) < 0)
+            b = seredina;
+        else
+            a = seredina;
+    }
+    return(a + b) / 2;
+}
+int main() {
+    float a = 0, b = 1, tochn = 0.00001;
+    printf("%f", solve(a, b, tochn));
+    return 0;
+    }
+
