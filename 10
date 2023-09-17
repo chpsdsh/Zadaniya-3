@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+
+int factorial(int a) {
+    if (a == 0) {
+        return 1;
+    }
+    else {
+        return a * factorial(a - 1);
+    }
+}
+
+
+int main() {
+    int i, j, n;
+    float sm = 0, pr = 1;
+    scanf_s("%d", &n);
+    for (i = 0; i < n; i++) {
+        pr = 1;
+        for (j = i; j < 2 * n; j++) {
+            pr *= (pow(-1, i) * (j + 1)) / (factorial(j - i + 1));
+        }
+        sm += pr;
+    }
+    printf("%f", sm);
+    return 0;
+}
